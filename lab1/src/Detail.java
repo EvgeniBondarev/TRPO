@@ -4,6 +4,13 @@ public abstract class Detail {
     protected double weight;
     protected double size;
 
+    /**
+     *
+     * @param form - форма детали, заданная в виде строки.
+     * @param material - материал, из которого изготовлена деталь, заданный в виде строки.
+     * @param weight - вес детали, заданный в килограммах, тип данных - double.
+     * @param size - размер детали, заданный в единицах, определяемых конкретной деталью, тип данных - double.
+     */
     public Detail(String form, String material, double weight, double size) {
         this.form = form;
         this.material = material;
