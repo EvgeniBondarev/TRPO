@@ -16,6 +16,8 @@ public class Nut extends Detail {
 
     @Override
     public String getDetailType() {
-        return "Nut";
+        return "Гайка";
     }
+
+
 }

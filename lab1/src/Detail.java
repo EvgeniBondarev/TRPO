@@ -18,6 +18,9 @@ public abstract class Detail {
         this.size = size;
     }
 
+    public Detail Clone(){
+        return this;
+    }
     public String getForm() {
         return form;
     }
@@ -51,4 +54,6 @@ public abstract class Detail {
     }
 
     public abstract String getDetailType();
+    public abstract String getThreadSize();
+    public abstract void setThreadSize(String model);
 }

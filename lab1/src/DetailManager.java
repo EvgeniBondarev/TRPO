@@ -43,13 +43,9 @@ public class DetailManager {
      * @param newDetail - новая деталь, которой нужно заменить старую.
      * @return true, если удалось изменить деталь, false - в противном случае.
      */
-    public boolean updateDetail(Detail oldDetail, Detail newDetail) {
+    public void updateDetail(Detail oldDetail, Detail newDetail) {
         int index = details.indexOf(oldDetail);
-        if (index != -1) {
-            details.set(index, newDetail);
-            return true;
-        }
-        return false;
+        details.set(index, newDetail);
     }
 
     /**
@@ -60,35 +56,37 @@ public class DetailManager {
     public List<Detail> getDetails() {
         return details;
     }
+
+
     /**
 
      Метод для вывода общего веса деталей каждой формы.
 
      Выводится вес каждой формы и суммарный вес всех деталей этой формы.
      */
-    public void overallWeight() {
+    public String overallWeight() {
         Map<String, Double> totalWeightsByShape = details.stream()
                 .collect(Collectors.groupingBy(Detail::getForm, Collectors.summingDouble(Detail::getWeight)));
 
-        totalWeightsByShape.forEach((form, totalWeight) -> {
-            System.out.println("Общий вес деталей формы " + form + " равняется: " + totalWeight + " kg");
-        });
+        for (Map.Entry<String, Double> entry : totalWeightsByShape.entrySet()) {
+            String form = entry.getKey();
+            Double totalWeight = entry.getValue();
+            String result = "Общий вес деталей формы " + form + " равняется: " + totalWeight + " kg";
+            return result;
+        }
 
-        System.out.println("\n");
+        return null;
     }
 
     /**
 
      Метод для вывода деталей, которые отличаются своей формой от всех остальных деталей.
      */
-    public void findUniqueDetails() {
-        List<Detail> uniqueDetails = details.stream()
+    public List<Detail> findUniqueDetails() {
+        return details.stream()
                 .filter(detail -> details.stream()
                         .filter(otherDetail -> !detail.equals(otherDetail))
                         .noneMatch(otherDetail -> detail.getForm().equals(otherDetail.getForm())))
                 .collect(Collectors.toList());
-
-        uniqueDetails.forEach(detail ->
-                System.out.println("Деталь, которая отличается своей формой: " + detail.getForm()));
     }
 }

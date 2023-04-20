@@ -4,7 +4,7 @@ public class Bolt extends Detail {
     public Bolt(String form, String material, double weight, double size, String threadSize) {
         super(form, material, weight, size);
         this.threadSize = threadSize;
-        super.size = 2;
+        super.size = size;
     }
 
     public String getThreadSize() {
@@ -17,6 +17,6 @@ public class Bolt extends Detail {
 
     @Override
     public String getDetailType() {
-        return "Bolt";
+        return "Болт";
     }
 }
