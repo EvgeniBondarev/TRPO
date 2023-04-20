@@ -26,6 +26,6 @@ public class Screw extends Detail {
 
     @Override
     public String getDetailType() {
-        return "Screw";
+        return "Винт";
     }
 }
