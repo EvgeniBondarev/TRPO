@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="622.0" minWidth="778.0" prefHeight="622.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab1.BankController">
+    <children>
+        <TextField fx:id="SurnameField" layoutX="20.0" layoutY="20.0" prefHeight="25.0" prefWidth="200.0" promptText="Фамилия" />
+        <TextField fx:id="NameField" layoutX="20.0" layoutY="50.0" prefHeight="25.0" prefWidth="200.0" promptText="Имя" />
+        <TextField fx:id="MiddlenameField" layoutX="20.0" layoutY="80.0" prefHeight="25.0" prefWidth="200.0" promptText="Отчество" />
+        <TextField fx:id="AdressField" layoutX="20.0" layoutY="110.0" prefHeight="25.0" prefWidth="350.0" promptText="Адрес" />
+        <TextField fx:id="NumberOfCreditCardField" layoutX="20.0" layoutY="140.0" prefHeight="25.0" prefWidth="350.0" promptText="Номер кредитной карточки" />
+        <TextField fx:id="NumberOfBankAccountField" layoutX="20.0" layoutY="170.0" prefHeight="25.0" prefWidth="350.0" promptText="Номер банковского счета" />
+        <Button fx:id="AddButton" layoutX="20.0" layoutY="200.0" mnemonicParsing="false" onAction="#createCustomer" prefHeight="25.0" prefWidth="100.0" text="Добавить" />
+        <Button fx:id="UpdateButton" layoutX="130.0" layoutY="200.0" mnemonicParsing="false" onAction="#updateCustomer" prefHeight="25.0" prefWidth="100.0" text="Редактировать" />
+        <Button fx:id="DeleteButtnon" layoutX="240.0" layoutY="200.0" mnemonicParsing="false" onAction="#deleteCutomer" prefHeight="25.0" prefWidth="100.0" text="Удалить" />
+        <Button fx:id="ClearButton" layoutX="350.0" layoutY="200.0" mnemonicParsing="false" onAction="#clearCustomer" prefHeight="25.0" prefWidth="100.0" text="Очистить" />
+        <Button fx:id="findButton" layoutX="460.0" layoutY="200.0" mnemonicParsing="false" onAction="#findCard" prefHeight="25.0" prefWidth="100.0" text="Найти" />
+        <TextField fx:id="minCard" layoutX="20.0" layoutY="230.0" prefHeight="25.0" prefWidth="150.0" promptText="Номер карты от" />
+        <TextField fx:id="maxCard" layoutX="180.0" layoutY="230.0" prefHeight="25.0" prefWidth="150.0" promptText="Номер карты до" />
+        <Button fx:id="sortByNameButton" layoutX="340.0" layoutY="230.0" mnemonicParsing="false" onAction="#sortByName" prefHeight="25.0" prefWidth="220.0" text="Сортировка по имени" />
+        <TableView fx:id="Table" layoutX="20.0" layoutY="260.0" prefHeight="400.0" prefWidth="760.0" onMouseClicked="#getData">
+            <columns>
+                <TableColumn fx:id="id" prefWidth="75.0" text="id" />
+                <TableColumn fx:id="Surname" prefWidth="100.0" text="Фамилия" />
+                <TableColumn fx:id="Name" prefWidth="100.0" text="Имя" />
+                <TableColumn fx:id="MiddleName" prefWidth="100.0" text="Отчество" />
+                <TableColumn fx:id="Adress" prefWidth="100.0" text="Адрес" />
+                <TableColumn fx:id="NumberOfCreditCard" minWidth="0.0" prefWidth="200.0" text="Номер кредитной карточки" />
+                <TableColumn fx:id="NumberOfBankAccount" minWidth="0.0" prefWidth="200.0" text="Номер банковского счета" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
